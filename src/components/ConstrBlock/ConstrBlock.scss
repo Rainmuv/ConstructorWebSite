@@ -1,0 +1,19 @@
+.ConstrBlock {
+  background-color: #e5edfc;
+  width: 590px;
+  min-height: 820px;
+  &-li {
+    margin: 25px 30px;
+    padding: 25px;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    width: 478px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+  }
+}
+
+.img-trash {
+  background-color: #000;
+}

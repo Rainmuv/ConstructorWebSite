@@ -1,0 +1,21 @@
+.ConstrSite {
+  width: 360px;
+  margin-top: 30px;
+  ul {
+    margin: 0 30px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      padding: 15px;
+      margin: 10px;
+      text-align: center;
+      width: 100px;
+      height: 63px;
+      background-color: #F6F9FE;
+      p {
+        padding-top: 10px;
+      }
+    }
+  }
+}
