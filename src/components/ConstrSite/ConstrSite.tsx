@@ -12,7 +12,12 @@ export const ConstrSite = () => {
   return (
     <div className='ConstrSite'>
       <ul>
-        {stateBlock.map((item, i) => <li onClick={() => onClickSite(item)} key={i} ><img src={item.icon} alt="#icon" /><p>{item.title}</p></li>)}
+        {stateBlock.map((item, i) => 
+          <li onClick={() => onClickSite(item)} 
+              key={i} ><img src={item.icon} 
+              alt="#icon" />
+              <p>{item.title}</p>
+          </li>)}
       </ul>
     </div>
   )
