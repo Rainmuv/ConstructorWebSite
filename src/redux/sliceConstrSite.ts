@@ -68,18 +68,36 @@ export const ConstrSite = createSlice({
       state.keyLi = action.payload
     },
     onChangeProps(state, action) {
-      const { file,value, i } = action.payload
-      if(state.stateArr[i].title === 'Image') {
-        state.stateArr[i].props = file[0]
+      const { value, i } = action.payload
+      state.stateArr[i].props = value
+    },
+    onClickCopy(state, action) {
+      state.stateArr.unshift(action.payload)
+    },
+    onClickUp(state, action) {
+      const {i, item} = action.payload
+      if(0 === i) {
+        console.log('error');
       } else {
-        state.stateArr[i].props = value
+        state.stateArr.splice(i - 1, 0, item)
+        state.stateArr.splice(i + 1, 1)
       }
+    },
+    onClickDown(state, action) {
+      const {i, item} = action.payload
+      if(state.stateArr.length - 1 === i) {
+        console.log('error');
+      } else {
+        state.stateArr.splice(i, 1)
+        state.stateArr.splice(i + 1, 0, item)
+      }
+      
     }
   }
 })
 
 export const selectConstrSite = (state: RootState) => state.constrSite
 
-export const { onClickLiReverse, onClickSiteRev, onClickSiteDel, onClickKey, onChangeProps } = ConstrSite.actions
+export const { onClickLiReverse, onClickSiteRev, onClickSiteDel, onClickKey, onChangeProps, onClickUp, onClickDown, onClickCopy } = ConstrSite.actions
 
 export default ConstrSite.reducer
